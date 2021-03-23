@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: xpose
+spec:
+  containers:
+  - name: xpose-cont
+    image: nginx
+    ports:
+      - containerPort: 8080

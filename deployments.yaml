@@ -1,0 +1,19 @@
+#When we use Deployments??
+#Whenever there is a need of crating the multiple pods along with rolling back the changes.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kplabs-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: nginx
